@@ -1,0 +1,462 @@
+/* You can add global styles to this file, and also import other style files */
+/* FUENTES
+
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Ubuntu Mono', monospace;
+
+/* -- GOOGLE ICONS -- */
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+  
+  /* -- FIXED NAVBAR -- */
+  
+  .navegacion {
+      overflow: hidden;
+      background-color: #2f2f2f;
+      position: fixed;
+      top: 0;
+      height: 80px;
+      width: 100%;
+      display: grid;
+      grid-template:
+      "logo menu" 80px /
+      auto  auto
+  }
+  
+  @media (max-width: 520px) {
+      .navegacion {
+          height: 150px;
+          grid-template:
+          "logo" 70px
+          "menu" 70px /
+          100%
+      }
+      .logo {
+          justify-content: center;
+          padding-left: 0px;
+      }
+      .menu {
+          justify-content: center;
+          padding-right: 0px;
+      }
+  }
+  
+  .logo {
+      display: grid;
+      grid-area: logo;
+      font-family: 'Ubuntu Mono', monospace;
+      color: white;
+      align-content: center;
+      padding: 20px;    
+  }
+  
+  .logo_max {
+      display: block;
+      margin: 0;
+  }
+  
+  .menu {
+      display: grid;
+      grid-area: menu;
+      justify-items: right;
+      font-family: 'Ubuntu', sans-serif;
+      padding: 20px;
+  }
+  
+  .menu_opc {
+      display: flex;
+      justify-items: center;
+      align-items: center;
+  }
+  
+  .fa {
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: #aa63ed;
+      transition: 0.3s;
+  }
+    
+  .fa:hover {
+      opacity: 0.7;
+      transform: scale(130%);
+      transition: 0.3s;
+  }
+  
+  .login_button {
+      display: grid;
+      border-radius: 20px;
+      width: 130px;
+      height: 40px;
+      text-align: center;
+      align-content: center;
+      text-decoration: none;
+      color: white;
+      background-color: #aa63ed;
+      transition: 0.3s;
+  }
+  
+  .login_button:hover {
+      opacity: 0.7;
+      transform: scale(105%);
+      transition: 0.3s;
+  }
+  
+  /* -- BANNER GRID -- */
+  
+  .main_article {
+      display: grid;
+      grid-template:
+      "banner"  auto
+      "content" auto;
+  }
+  
+  .banner {
+      display: grid;
+      grid-area: banner;
+      align-content: center;
+      padding-left: 60px;
+      height: 100vh;
+      background: rgb(0,0,0);
+      background: linear-gradient(176deg, rgba(0,0,0,1) 0%, rgba(57,57,57,1) 100%);
+  }
+  
+  .content {
+      display: grid;
+      grid-area: content;
+  }
+  
+  /* -- BANNER -- */
+  
+  .titulo_banner {
+      font-family: 'Ubuntu Mono', monospace;
+      color: white;
+      font-size: 80px;
+      text-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+  }
+  
+  .flecha_abajo {
+      color: white;
+      text-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+      font-size: 60px;
+      cursor: pointer;
+      text-decoration: none;
+      width: 60px;
+  }
+  
+  .flecha_abajo:hover {
+      opacity: 0.7;
+      transform: scale(110%);
+      transition: 0.3s;
+  }
+  
+  @media (max-width: 720px) {
+      .titulo_banner {
+          font-size: 50px;
+      }
+  }
+  
+  @media (max-width: 520px) {
+      .titulo_banner {
+          font-size: 40px;
+      }
+      .banner {
+          padding-left: 15px;
+      }
+  }
+  
+  /* -- INFORMACION PERSONAL -- */
+  
+  .informacion_personal {
+      display: grid;
+      grid-template:
+      "foto     info" auto /
+      300px     auto;
+  }
+  
+  @media (max-width: 720px) {
+      .informacion_personal {
+          grid-template:
+          "foto" 300px
+          "info" auto;
+      }
+      .nombre_perfil {
+          align-items: center;
+          justify-content: center;
+      }
+  }
+  
+  .foto_perfil {
+      display: grid;
+      grid-area: foto;
+      align-items: center;
+      justify-items: center;
+      padding: 40px;
+  }
+  
+  .informacion_perfil {
+      display: grid;
+      grid-area: info;
+      align-items: center;
+  }
+  
+  .perfil {
+      display: grid;
+      grid-area: foto-perfil;
+      width: 200px;
+      height: auto;
+      border-radius: 100%;
+      border: solid 6px #aa63ed;
+  }
+  
+  .edit_button {
+      display: grid;
+      grid-area: boton-edit;
+      color: black;
+      font-size: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      width: 25px;
+      height: 25px;
+      transition: 0.3s;
+  }
+  
+  .edit_button:hover {
+      opacity: 0.7;
+      transform: scale(105%);
+      transition: 0.3s;
+  }
+  
+  .delete_button {
+      display: grid;
+      grid-area: delete-edit;
+      color: black;
+      font-size: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      width: 25px;
+      height: 25px;
+      transition: 0.3s;
+  }
+  
+  .delete_button:hover {
+      opacity: 0.7;
+      transform: scale(105%);
+      transition: 0.3s;
+  }
+  
+  .grid_foto {
+      display: grid;
+      grid-template:
+      "foto-perfil boton-edit"
+  }
+  
+  .nombre_perfil {
+      display: grid;
+      grid-area: infoperfil;
+      font-family: 'Ubuntu Mono', monospace;
+      padding: 20px;
+  }
+  
+  .acercademi {
+      display: grid;
+      grid-area: infoperfil;
+      font-family: 'Ubuntu', sans-serif;
+      padding: 20px;
+  }
+  
+  .grid_edit {
+      display: grid;
+      grid-template:
+      "infoperfil boton-edit" auto /
+      auto        40px;
+      align-items: center;
+  }
+  
+  /* -- EXPERIENCIAS -- */
+  
+  .experiencias {
+      background: rgb(0,0,0);
+      background: linear-gradient(176deg, #aa63ed 0%, white 100%);
+      padding: 20px;
+  }
+  
+  .experiencias-add {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Ubuntu Mono', monospace;
+      padding: 20px;
+  }
+  
+  .tarjeta_experiencias {
+      display: grid;
+      grid-template:
+      "imagen-exp titulo-exp opciones-exp" 70px
+      "imagen-exp desc-exp   opciones-exp" auto /
+      auto        auto       40px;
+      border-radius: 20px;
+      padding: 30px;
+      align-items: center;
+      background-color: white;
+      margin: 20px;
+  }
+  
+  @media (max-width: 780px) {
+      .tarjeta_experiencias{
+          grid-template:
+          "imagen-exp opciones-exp" auto
+          "titulo-exp opciones-exp" 70px
+          "desc-exp   opciones-exp" auto /
+          auto        40px;
+          justify-items: center;
+      }
+  }
+  
+  .tarjeta_experiencia_imagen {
+      display: grid;
+      grid-area: imagen-exp;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+  }
+  
+  .tarjeta_experiencia_titulo {
+      display: grid;
+      grid-area: titulo-exp;
+      padding: 20px;
+      font-family: 'Ubuntu Mono', monospace;
+  }
+  
+  .tarjeta_experiencia_desc {
+      display: grid;
+      grid-area: desc-exp;
+      padding: 20px;
+      font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .botones-opcion {
+      display: grid;
+      grid-area: opciones-exp;
+  }
+  
+  .tarjeta-experiencias-link {
+      display: inline-block;
+      width: 220px;
+  }
+  
+  /* -- EDUCACION -- */
+  
+  .educacion {
+      background: white;
+      padding: 20px;
+  }
+  
+  .tarjeta_educacion {
+      display: grid;
+      grid-template:
+      "imagen-exp titulo-exp opciones-exp" 70px
+      "imagen-exp desc-exp   opciones-exp" auto /
+      auto        auto       40px;
+      border-radius: 20px;
+      padding: 30px;
+      align-items: center;
+      margin: 20px;
+      background: rgb(0,0,0);
+      background: linear-gradient(176deg, #aa63ed7a 0%, white 100%);
+  }
+  
+  @media (max-width: 780px) {
+      .tarjeta_educacion{
+          grid-template:
+          "imagen-exp opciones-exp" auto
+          "titulo-exp opciones-exp" 70px
+          "desc-exp   opciones-exp" auto /
+          auto        40px;
+          justify-items: center;
+      }
+  }
+  
+  /* -- HABILIDADES -- */
+  
+  .habilidades {
+      background: rgb(0,0,0);
+      background: linear-gradient(176deg, #aa63ed 0%, white 100%);
+      padding: 20px;
+  }
+  
+  .tarjeta_habilidad {
+      display: grid;
+      border-radius: 20px;
+      background-color: white;
+      width: 350px;
+      height: auto;
+      margin-bottom: 40px;
+      margin: 10px;
+      padding: 30px;
+      font-family: 'Ubuntu', sans-serif;
+  }
+
+  .habilidades_cont {
+      width: 100%;
+      background-color: #ddd;
+  }
+    
+  .skills {
+      text-align: right;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: white;
+  }
+    
+  .html {width: 100%; background-color: #aa63ed;}
+  .js {width: 65%; background-color: #aa63ed;}
+  .java {width: 75%; background-color: #aa63ed;}
+  .py {width: 85%; background-color: #aa63ed;}
+  .dj {width: 65%; background-color: #aa63ed;}
+
+  .com {width: 85%; background-color: #aa63ed;}
+  .sc {width: 75%; background-color: #aa63ed;}
+  .creat {width: 90%; background-color: #aa63ed;}
+
+  .ingles {width: 100%; background-color: #aa63ed;}
+  .port {width: 35%; background-color: #aa63ed;}
+  .it {width: 25%; background-color: #aa63ed;}
+  
+  .tarjetas_habilidad {
+      display: flex;
+      flex-wrap: wrap;
+      place-content: center;
+  }
+  
+  /* -- PROYECTOS -- */
+  
+  .proyectos {
+      background: white;
+      padding: 20px;
+  }
+
+  /* -- FOOTER -- */
+
+.footer {
+    display: grid;
+    justify-content: center;
+    background-color: #2f2f2f;
+    height: 160px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
+.redes_footer {
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}

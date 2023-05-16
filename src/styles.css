@@ -460,3 +460,81 @@ font-family: 'Ubuntu Mono', monospace;
     align-items: center;
     padding: 20px;
 }
+
+/* -- LOGIN -- */
+
+.login_container {
+    display: grid;
+    grid-area: banner;
+    align-content: center;
+    padding-left: 60px;
+    height: 100vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(176deg, rgba(0,0,0,1) 0%, rgba(57,57,57,1) 100%);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.titulo_login {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Ubuntu Mono', monospace;
+    padding: 20px;
+}
+
+.tarjeta_login {
+    background-color: white;
+    background: rgb(0,0,0);
+    background: linear-gradient(176deg, #aa63ed 0%, white 100%);
+    border-radius: 20px;
+    width: 500px;
+    height: 400px;
+    display: grid;
+    padding: 30px;
+}
+
+@media (max-width: 720px) {
+    .tarjeta_login {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tarjeta_login {
+        width: 150px;
+        height: auto;
+    }
+
+    .input {
+        width: 140px;
+        height: 40px;
+    }
+}
+
+.input {
+    border: none;
+}
+
+.input_button {
+    border: none;
+    cursor: pointer;
+}
+
+.botones_login {
+    display: flex;
+    padding-top: 20px;
+    gap: 10px;
+}
+
+@media (max-width: 480px) {
+    .botones_login {
+        display: grid;
+    }
+}
+
+.titulo_label {
+    display: grid;
+    align-content: center;
+    font-family: 'Ubuntu Mono', monospace;
+}

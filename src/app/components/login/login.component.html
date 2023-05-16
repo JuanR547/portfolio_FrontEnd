@@ -1,0 +1,18 @@
+<div class="login_container">
+    <div class="titulo_login">
+        <h1>Iniciar Sesion</h1>
+    </div>
+
+    <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>  
+        <div class="tarjeta_login">   
+            <label for="nombreUsuario" class="titulo_label">Usuario: </label>   
+            <input type="text" placeholder="Ingrese su usuario" name="nombreUsuario" id="nombreUsuario" [(ngModel)]="nombreUsuario" required class="input">  
+            <label for="password" class="titulo_label">Contraseña: </label>   
+            <input type="password" placeholder="Ingrese su contraseña" name="password" id="password" [(ngModel)]="password" required class="input">
+            <div class="botones_login">
+                <button type="submit" class="login_button input_button">Iniciar Sesion</button>   
+                <a href="" class="login_button input_button">Cancelar</a>   
+            </div> 
+        </div>   
+    </form>
+</div>

@@ -1,0 +1,19 @@
+<div class="login_container">
+    <div class="titulo_login">
+        <h1>Editar Experiencia</h1>
+    </div>
+    <div *ngIf="expLab">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">  
+            <div class="tarjeta_login">   
+                <label for="nombreE" class="titulo_label">Nombre: </label>   
+                <input type="text" placeholder="Ingrese el nombre:" name="nombreE" id="nombreE" [(ngModel)]="expLab.nombreE" required class="input">  
+                <label for="descripcionE" class="titulo_label">Descripcion: </label>   
+                <input type="text" placeholder="Ingrese la descripcion:" name="descripcionE" id="descripcionE" [(ngModel)]="expLab.descripcionE" required class="input">
+                <div class="botones_login">
+                    <button type="submit" class="login_button input_button">Editar</button>   
+                    <a href="" class="login_button input_button">Cancelar</a>   
+                </div> 
+            </div>   
+        </form>
+    </div>
+</div>
